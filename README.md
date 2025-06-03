@@ -6,7 +6,7 @@ Este projeto tem como objetivo desenvolver uma solução completa utilizando pr�
 
 ---
 
-**ClimaResponde** é uma API RESTful em Java com Spring Boot que apoia ações em resposta a eventos climáticos extremos. Com um banco de dados PostgreSQL persistente em container separado, a aplicação permite o gerenciamento de recursos críticos (como água, alimentos e primeiros socorros), sendo **totalmente conteinerizada** com Docker, **orquestrada via Docker Compose** e preparada para deploy em VM Linux na nuvem.
+**ClimaResponde** é uma API RESTful em Java com Spring Boot que apoia ações em resposta a eventos climáticos extremos. Utiliza banco de dados PostgreSQL para persistência e está totalmente conteinerizada, com a imagem publicada no Docker Hub, pronta para execução via `docker run`, inclusive em ambientes de nuvem como máquinas virtuais Linux.
 
 ---
 
@@ -14,41 +14,22 @@ Este projeto tem como objetivo desenvolver uma solução completa utilizando pr�
 
 ### ✅ Pré-requisitos
 - Docker instalado
-- Docker Compose instalado
 - Terminal (CMD/PowerShell no Windows ou Bash no Linux)
-- Acesso à pasta do projeto
+- Acesso à internet para puxar a imagem
 
 ---
 
+## 🔧 Execução da aplicação
 
-## 🐧 Instruções para Linux (Bash)
-
-1. Navegue até a pasta raiz do projeto:
-
-```sh
-cd java-api
-```
-
-2. Execute os containers em segundo plano com build:
+1. Execute o container da API diretamente via Docker Hub:
 
 ```bash
-docker-compose up -d --build
+docker run -d -p 8080:8080 rm98410/climaresponde-api
 ```
 
----
+2. Acesse a aplicação:
 
-## 🔎 Verificação e Logs dos Containers
-
-Após iniciar, valide a execução com:
-
-```bash
-docker ps
-docker-compose logs
-```
-
-A aplicação estará disponível em:
-
-- VM: http://52.170.77.61:8080/api/items
+- Em VM: http://52.170.77.61:8080/api/items
 
 ---
 
@@ -57,9 +38,6 @@ A aplicação estará disponível em:
 ### Criar item (POST)
 
 **Windows:**
-```sh
-curl -X POST http://localhost:8080/api/items -H "Content-Type: application/json" -d "{\"nome\": \"Emergencial\", \"quantidade\": 5}"
-```
 
 **Linux:**
 ```bash
@@ -69,14 +47,14 @@ curl -X POST http://localhost:8080/api/items -H "Content-Type: application/json"
 ---
 
 ### Listar todos os itens (GET)
-```sh
+```bash
 curl http://localhost:8080/api/items
 ```
 
 ---
 
 ### Consultar item por ID (GET)
-```sh
+```bash
 curl http://localhost:8080/api/items/1
 ```
 
@@ -85,7 +63,7 @@ curl http://localhost:8080/api/items/1
 ### Atualizar item (PUT)
 
 **Windows:**
-```sh
+```bash
 curl -X PUT http://localhost:8080/api/items/1 -H "Content-Type: application/json" -d "{\"nome\": \"Atualizado\", \"quantidade\": 10}"
 ```
 
@@ -97,35 +75,32 @@ curl -X PUT http://localhost:8080/api/items/1 -H "Content-Type: application/json
 ---
 
 ### Remover item (DELETE)
-```sh
+```bash
 curl -X DELETE http://localhost:8080/api/items/1
 ```
 
 ---
 
-## 🐳 Containers
+## 🐳 Container da aplicação
 
-- **App:** imagem construída localmente via `Dockerfile` (Java 17 + Spring Boot)
-- **DB:** imagem PostgreSQL com `Dockerfile` personalizado (`USER`, `WORKDIR`, `ENV`)
-- **Volume:** persistência dos dados configurada
-- **Portas expostas:** 8080 (app), 5432 (db)
+- **Imagem:** [`rm98410/climaresponde-api`](https://hub.docker.com/r/rm98410/climaresponde-api)
+- **Base:** Java 17 + Spring Boot
+- **Porta exposta:** 8080
+- **Deploy:** Executável em qualquer host com Docker, inclusive em VMs Linux na nuvem
 
 ---
 
-## 🧪 Execução via Terminal (Evidência)
+## 🧪 Evidências de Execução
 
-Todos os containers são executados em segundo plano:
+- Imagem publicada no Docker Hub
+- Container executado com:
 
-```sh
-docker-compose up -d
+```bash
+docker run -d -p 8080:8080 rm98410/climaresponde-api
 ```
 
-Logs e verificação:
-
-```sh
-docker ps
-docker-compose logs
-```
+- Testes validados via `curl`
+- API acessível externamente pela porta 8080
 
 ---
 
@@ -135,10 +110,11 @@ docker-compose logs
 **Disciplina:** DevOps Tools & Cloud Computing  
 **Instituição:** FIAP  
 **Semestre:** 2025/1  
+**Desafio:** Global Solution
 
 ---
 
 ## 👤 Autor
 
 **Eduardo Ferreira Silva de Jesus**  
-**RM:** 98410  
+**RM:** 98410
