@@ -20,28 +20,13 @@ Este projeto tem como objetivo desenvolver uma solução completa utilizando pr�
 
 ---
 
-## 🪟 Instruções para Windows (CMD ou PowerShell)
-
-1. Navegue até a pasta raiz do projeto:
-
-```sh
-cd caminho\para\DevOps_Java_API_Project
-```
-
-2. Execute os containers em segundo plano com build:
-
-```sh
-docker-compose up -d --build
-```
-
----
 
 ## 🐧 Instruções para Linux (Bash)
 
 1. Navegue até a pasta raiz do projeto:
 
 ```sh
-cd ~/caminho/para/DevOps_Java_API_Project
+cd java-api
 ```
 
 2. Execute os containers em segundo plano com build:
