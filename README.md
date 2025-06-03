@@ -20,11 +20,8 @@ Este projeto tem como objetivo desenvolver uma solução completa utilizando pr�
 
 ---
 
-## 🔧 Etapas completas do projeto (do zero ao funcionamento)
+## 🔧 Etapas do projeto 
 
-
-```
-```
 
 ### 1. Criar as imagens e subir os containers
 
