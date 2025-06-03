@@ -64,7 +64,7 @@ docker-compose logs
 A aplicação estará disponível em:
 
 - Localmente: [http://localhost:8080/api/items](http://localhost:8080/api/items)
-- VM: [(http://52.170.77.61:8080/api/items)]
+- VM: http://52.170.77.61:8080/api/items
 
 ---
 
