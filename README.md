@@ -64,7 +64,7 @@ docker-compose logs
 A aplicação estará disponível em:
 
 - Localmente: [http://localhost:8080/api/items](http://localhost:8080/api/items)
-- VM (se aplicável): [http://<ip-da-vm>:8080/api/items](http://<ip-da-vm>:8080/api/items)
+- VM: [(http://52.170.77.61:8080/api/items)]
 
 ---
 
@@ -151,7 +151,6 @@ docker-compose logs
 **Disciplina:** DevOps Tools & Cloud Computing  
 **Instituição:** FIAP  
 **Semestre:** 2025/1  
-**Desafio:** Global Solution
 
 ---
 
