@@ -32,10 +32,6 @@ sudo docker-compose up --build -d
 ### 2. Verificar os logs da aplicação
 
 ```bash
-# Ver os logs da API
-sudo docker logs -f $(docker ps -qf "ancestor=rm98410/climaresponde-api:1.0")
-
-# Ou diretamente pelo nome do container:
 sudo docker logs -f <nome_do_container_da_api>
 ```
 
@@ -46,11 +42,10 @@ sudo docker logs -f <nome_do_container_da_api>
 ### 4. Publicar no Docker Hub
 
 ```bash
-# Estar logado
 sudo docker login
 
-# Build da imagem (caso ainda não tenha)
-sudo docker build -t rm98410/climaresponde-api:1.0 ./java-api
+# Build da imagem 
+sudo docker build -t rm98410/climaresponde-api:1.0 .
 
 # Enviar para o Docker Hub
 sudo docker push rm98410/climaresponde-api:1.0
