@@ -110,4 +110,5 @@ curl -X DELETE http://localhost:8080/api/items/1
 ## 👤 Autor
 
 **Eduardo Ferreira Silva de Jesus**
+
 **RM:** 98410
