@@ -85,15 +85,6 @@ curl -X PUT http://localhost:8080/api/items/1 -H "Content-Type: application/json
 curl -X DELETE http://localhost:8080/api/items/1
 ```
 
----
-
-## 🐳 Container da aplicação
-
-* **Imagem:** [`rm98410/climaresponde-api`](https://hub.docker.com/r/rm98410/climaresponde-api)
-* **Base:** Java 17 + Spring Boot
-* **Porta exposta:** 8080
-* **Banco de dados:** PostgreSQL (porta 5432)
-* **Deploy:** Executável em qualquer host com Docker, inclusive em VMs Linux
 
 ---
 
